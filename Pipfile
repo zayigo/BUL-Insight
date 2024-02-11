@@ -1,0 +1,28 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+camelot-py = "*"
+opencv-python = "*"
+ghostscript = "*"
+matplotlib = "*"
+tk = "*"
+peewee = "*"
+pymupdf = "*"
+isort = "*"
+
+[dev-packages]
+ipykernel = "*"
+flake8 = "*"
+isort = "*"
+jedi = "*"
+autopep8 = "*"
+yapf = "*"
+ipython = ">=7.31.1"
+pylint = "*"
+jupyter = "*"
+
+[requires]
+python_version = "3"
