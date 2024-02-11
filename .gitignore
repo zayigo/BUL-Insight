@@ -197,3 +197,4 @@ pyrightconfig.json
 *.db
 *.sqlite
 .vscode
+*.sqlite-journal
