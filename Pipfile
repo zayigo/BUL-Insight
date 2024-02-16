@@ -7,11 +7,9 @@ name = "pypi"
 camelot-py = "*"
 opencv-python = "*"
 ghostscript = "*"
-matplotlib = "*"
 tk = "*"
 peewee = "*"
 pymupdf = "*"
-isort = "*"
 
 [dev-packages]
 ipykernel = "*"
