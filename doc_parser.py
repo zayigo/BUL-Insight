@@ -57,7 +57,12 @@ class DocParser:
             extracted_tables = []
             for page, region in zip(page_range.split('-'), table_regions):
                 tables = camelot.read_pdf(
-                    self.document_path, strip_text='.\n', flavor='lattice', pages=page, table_regions=[region]
+                    self.document_path,
+                    strip_text='\n',
+                    flavor='lattice',
+                    pages=page,
+                    table_regions=[region],
+                    backend="ghostscript"
                 )
                 for table in tables:
                     page_order = table.parsing_report['order']
@@ -66,7 +71,7 @@ class DocParser:
             if '-' in page_range and int(range_info['end']) - int(range_info['start']) > 1:
                 page_range = f"{int(range_info['start']) + 1}-{int(range_info['end']) - 1}"
                 tables_middle = camelot.read_pdf(
-                    self.document_path, strip_text='.\n', flavor='lattice', pages=page_range
+                    self.document_path, strip_text='\n', flavor='lattice', pages=page_range, backend="ghostscript"
                 )
                 for table in tables_middle:
                     page_order = table.parsing_report['order']
@@ -81,10 +86,8 @@ class DocParser:
             raise ValueError("The structure of the table does not match the expected schema")
         regions_found = 0
         for index, row in table.iterrows():
-            if index == 0:
-                continue
             region_name = row[0].replace('’', '\'').replace('-', ' ').strip().lower()
-            if not region_name or region_name in ['totale complessivo']:
+            if not region_name or region_name in ['totale complessivo', 'regione']:
                 continue
             try:
                 region = Region.get(fn.lower(Region.name) == region_name)
@@ -93,7 +96,10 @@ class DocParser:
                 print(f"Region {region_name} not found in database")
                 continue
             for col_index, metric_name in enumerate(columns, start=1):
-                metric_value = row[col_index].replace('-', '').strip()
+                try:
+                    metric_value = float(row[col_index].replace('-', '').replace('.', '').strip())
+                except ValueError:
+                    metric_value = None
                 try:
                     metric = Metric.get((Metric.category == current_category) & (Metric.name == metric_name))
                     try:

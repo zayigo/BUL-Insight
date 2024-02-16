@@ -32,6 +32,6 @@ class MonthlyData(BaseModel):
     id = AutoField(primary_key=True)
     region = ForeignKeyField(Region)
     metric = ForeignKeyField(Metric)
-    value = FloatField()
+    value = FloatField(null=True)
     metric_date = DateField()
     created_date = DateTimeField(default=datetime.now)
