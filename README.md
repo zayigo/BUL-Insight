@@ -1,7 +1,7 @@
 <div align="center">
   <img src="https://i.imgur.com/2IhIywQ.png" width="150" />
   <h1>BUL Insight</h1>
-  <em>Elaborazione e archiviazione del <a href="https://fibra.click/piano-bul/">piano nazionale italiano per la Banda Ultralarga (piano BUL)</a> nelle <a href="https://fibra.click/piano-aree-bianche/">aree bianche</a></em>
+  <em>Elaborazione e archiviazione dei dati di avanzamento del <a href="https://fibra.click/piano-bul/">piano nazionale italiano per la Banda Ultralarga (piano BUL)</a> nelle <a href="https://fibra.click/piano-aree-bianche/">aree bianche</a></em>
   <br>
   <br>
   <img src="https://img.shields.io/badge/Python-3776AB.svg?style=flat&logo=Python&logoColor=white" alt="Python">
