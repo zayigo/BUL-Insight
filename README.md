@@ -9,7 +9,6 @@
 
 ---
 
-
 ## Requisiti
 
 Assicurati di avere le seguenti dipendenze installate sul tuo sistema:
@@ -19,22 +18,31 @@ Assicurati di avere le seguenti dipendenze installate sul tuo sistema:
   - Senza Pipenv: Esegui `pip install -r requirements.txt` per installare le dipendenze elencate nel file `requirements.txt`.
   - Con Pipenv: Assicurati di avere [Pipenv](https://pipenv.pypa.io/en/latest/) installato ed esegui `pipenv install` per creare un ambiente virtuale e installare le dipendenze dal `Pipfile`.
 
-
 ## Utilizzo
 
-### Eaborare un singolo file:
-   ```
-   python3 main.py --file archive/2023_11.pdf
-   ```
-### Elaborare tutti i file in una cartella:
-   ```
-   python3 main.py --folder archive
-   ```
-### Esportare i dati elaborati:
-   ```
-   main.py --export --export-dir export
-   ```
+### Creare e inizializzare il database:
 
+```
+python3 -m database
+```
+
+### Eaborare un singolo file:
+
+```
+python3 main.py --file archive/2023_11.pdf
+```
+
+### Elaborare tutti i file in una cartella:
+
+```
+python3 main.py --folder archive
+```
+
+### Esportare i dati elaborati:
+
+```
+python3 main.py --export --export-dir export
+```
 
 ## Come funziona
 
@@ -43,7 +51,6 @@ Assicurati di avere le seguenti dipendenze installate sul tuo sistema:
 2. **Estrazione delle tabelle con Camelot**: Le pagine estratte nella fase precedente vengono poi analizzate con [Camelot](https://camelot-py.readthedocs.io/en/master/), una libreria specializzata nell'estrazione di tabelle da documenti PDF. Camelot trasforma le tabelle in [DataFrame di pandas](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html), rendendo i dati facilmente manipolabili con strumenti di analisi dati in Python.
 
 3. **Elaborazione dei dati**: Una volta estratti, i dati vengono elaborati in base alla sezione di provenienza ed inseriti all'interno di un database.
-
 
 ## Archiviazione e Accesso ai Dati
 
@@ -58,7 +65,6 @@ Nella cartella `export/` sono invece disponibili i file CSV, divisi per regione 
 
 - [Notizie Banda Ultralarga](https://bandaultralarga.italia.it/category/notizie/)
 - [Archivio News Infratel Italia](https://www.infratelitalia.it/archivio-news)
-
 
 ## License
 
