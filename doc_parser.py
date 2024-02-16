@@ -85,7 +85,7 @@ class DocParser:
         if len(table.columns) != len(columns) + 1:
             raise ValueError("The structure of the table does not match the expected schema")
         regions_found = 0
-        for index, row in table.iterrows():
+        for _, row in table.iterrows():
             region_name = row[0].replace('’', '\'').replace('-', ' ').strip().lower()
             if not region_name or region_name in ['totale complessivo', 'regione']:
                 continue
