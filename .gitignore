@@ -198,3 +198,4 @@ pyrightconfig.json
 *.sqlite
 .vscode
 *.sqlite-journal
+download.sh
