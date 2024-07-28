@@ -56,7 +56,7 @@ python3 main.py --export --export-dir export
 
 I PDF originali sono archiviati in questa repository nella cartella `archive/`, dove è presente anche il file `index.csv` che contiene i link esterni ai documenti.
 
-Nella cartella `export/` sono invece disponibili i file CSV, divisi per regione e aggiornati al **31/05/2024**.
+Nella cartella `export/` sono invece disponibili i file CSV, divisi per regione e aggiornati al **30/06/2024**.
 
 > [!WARNING]
 > La correttezza dei dati non è garantita.
